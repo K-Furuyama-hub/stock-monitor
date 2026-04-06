@@ -1,0 +1,8 @@
+route:
+  receiver: "discord-notifier"
+
+receivers:
+  - name: "discord-notifier"
+    webhook_configs:
+      - url: "http://notifier:5001/alert"
+      

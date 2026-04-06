@@ -1,0 +1,10 @@
+groups:
+  - name: stock-alerts
+    rules:
+      - alert: StockPriceHigh
+        expr: stock_price{ticker="RKLB"} > 70
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: "{{$labels.ticker}}が{{$value}}になりました"
